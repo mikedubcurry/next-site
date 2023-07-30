@@ -2,7 +2,10 @@ import Humphrey from "../../public/Humphrey.jpg";
 import Hamilton from "../../public/Hamilton.jpg";
 import June from "../../public/June.jpg";
 import AnimalImage from "@/lib/AnimalImage";
-import Link from "next/link";
+import NextLink from "next/link";
+import { Link } from "@/lib/Link";
+import { Heading } from "@/lib/Heading";
+import { Section } from "@/lib/Section";
 
 export default function Home() {
     let currentYear = new Date().getFullYear();
@@ -20,30 +23,23 @@ export default function Home() {
 
     return (
         <>
-            <section className="flex flex-col justify-center gap-4">
-                <h2 className="text-2xl">Software Developer by Day, Dubstep Producer by Night</h2>
-                <p>My name is Michael, and I love designing and building large scale software systems. I live in Saugerties with an occasional commute to work at <a
-                    className="underline text-sky-300 hover:text-blue-400 transition-colors"
-                    href="https://troyweb.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Troy Web
-                </a> where I work with an amazing group of people. In my spare
+            <Section>
+                <Heading level={2}>A Bit About Myself</Heading>
+                <p>My name is Michael, and I love building large-scale software systems. I live in Saugerties with an occasional commute to the office at <Link href="https://troyweb.com" target="_blank" rel="noopener noreferer">Troy Web</Link> where I work with an amazing group of people. In my spare
                     time, I like to experiment with different sounds and produce
-                    dubstep and other electronic music. You can find all of that
-                    {" "} <a title="Michael's Soundcloud"
-                        href="https://soundcloud.com/mikedubcurry">here</a></p>
-            </section>
-            <section className="flex flex-col justify-center gap-4">
-                <h2 className="text-2xl">Cool Links</h2>
+                    electronic music. You can find all of that
+                    {" "} <Link title="Michael's Soundcloud"
+                        href="https://soundcloud.com/mikedubcurry">here</Link></p>
+            </Section>
+            <Section>
+                <Heading level={2}>Cool Links</Heading>
                 <p>Links that I think are cool.</p>
-                <ul className="list-disc list-inside">
-                    <li>
+                <ul className="list-disc list-inside px-4 mb-2">
+                    <li className="mb-2">
                         <span className="font-bold">
-                            <Link href="https://www.youtube.com/watch?v=xuCn8ux2gbs" target="_blank" rel="noopener noreferrer">
+                            <NextLink href="https://www.youtube.com/watch?v=xuCn8ux2gbs" target="_blank" rel="noopener noreferrer">
                                 The History of the World, I Guess
-                            </Link>
+                            </NextLink>
                         </span>{" "}
                         <p>
                             A hilarious and informative video about the history of the world.
@@ -51,18 +47,18 @@ export default function Home() {
                     </li>
                     <li>
                         <span className="font-bold">
-                            <Link href="https://www.youtube.com/watch?v=9C_HReR_McQ" target="_blank" rel="noopener noreferrer">
+                            <NextLink href="https://www.youtube.com/watch?v=9C_HReR_McQ" target="_blank" rel="noopener noreferrer">
                                 Antoher Cool Thing
-                            </Link>
+                            </NextLink>
                         </span>{" "}
                         <p>
                             A hilarious and informative video about the history of the world.
                         </p>
                     </li>
                 </ul>
-            </section>
-            <section className="flex flex-col justify-center gap-4">
-                <h2 className="text-2xl">About Me</h2>
+            </Section>
+            <Section>
+                <Heading level={2}>Some More About Myself</Heading>
                 <p>
                     I am a software developer who loves to learn new things. I
                     have experience with a wide range of technologies, including
@@ -74,7 +70,7 @@ export default function Home() {
                     I have two cats named Humphrey and Hamilton, as well as a chicken,
                     June.
                 </p>
-            </section>
+            </Section>
             <aside className="flex w-full flex-col md:flex-row gap-8 justify-between">
                 <AnimalImage
                     src={Humphrey}
@@ -96,31 +92,31 @@ export default function Home() {
                     longCaption={animalFacts["June"]}
                 />
             </aside>
-            <section className="flex flex-col justify-center items-center gap-2">
+            <Section>
                 <p>
                     This site is built with{" "}
-                    <Link href="https://nextjs.org" className="">
+                    <NextLink href="https://nextjs.org" className="">
                         Next.js
-                    </Link>{" "}
+                    </NextLink>{" "}
                     and{" "}
-                    <Link href="https://tailwindcss.com" className="">
+                    <NextLink href="https://tailwindcss.com" className="">
                         Tailwind CSS
-                    </Link>
+                    </NextLink>
                     . It is hosted on{" "}
-                    <Link href="https://vercel.com" className="">
+                    <NextLink href="https://vercel.com" className="">
                         Vercel
-                    </Link>
+                    </NextLink>
                     .
                 </p>
                 <p>
                     You can view this site's <Link href="https://github.com/mikedubcurry/next-site" target="_blank" rel="noopener noreferrer" >source code</Link> as well as the rest of my work on{" "}
-                    <Link href="https://github.com/mikedubcurry" target="_blank" rel="noopener noreferrer" className="">
+                    <NextLink href="https://github.com/mikedubcurry" target="_blank" rel="noopener noreferrer" className="">
                         GitHub
-                    </Link>
+                    </NextLink>
                     .
                 </p>
                 <p>EST 2023</p>
-            </section>
+            </Section>
         </>
     );
 }
