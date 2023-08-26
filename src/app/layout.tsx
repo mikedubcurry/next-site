@@ -1,3 +1,4 @@
+import { ThemeContextProvider } from "@/lib/ThemeContext";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -16,7 +17,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className + ' w-full h-full'}>
-                {children}
+                <ThemeContextProvider>
+                    {children}
+                </ThemeContextProvider>
             </body>
         </html>
     );
